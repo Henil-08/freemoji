@@ -1,3 +1,9 @@
 emoji
-.venv
+venv
+freemoji
 raw
+fine-tune/emojis
+fine-tune/models
+**/SimpleTuner
+**/__pycache__
+**/.cache

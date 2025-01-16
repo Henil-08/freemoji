@@ -2,7 +2,7 @@ import json
 
 def process_emojis():
     # Read original JSON
-    with open('emojis.json', 'r') as f:
+    with open('emojis/emojis.json', 'r') as f:
         emoji_data = json.load(f)
     
     # Filter out any emoji containing "skin-tone" in name
@@ -12,7 +12,7 @@ def process_emojis():
     ]
     
     # Write filtered data
-    with open('emojisPruned.json', 'w') as f:
+    with open('emojis/emojisPruned.json', 'w') as f:
         json.dump(filtered_emojis, f, indent=2)
 
 if __name__ == '__main__':

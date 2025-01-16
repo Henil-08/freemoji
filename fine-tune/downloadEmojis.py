@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import re
 import json
 
+
 def fetch_and_process_emojis():
     url = 'https://emojigraph.org/whatsapp/'
     response = requests.get(url)
@@ -40,10 +41,8 @@ def fetch_and_process_emojis():
     
     return all_emoji_data
 
-def main():
-    emoji_data = fetch_and_process_emojis()
-    with open('emojis.json', 'w', encoding='utf-8') as f:
-        json.dump(emoji_data, f, ensure_ascii=False, indent=2)
 
 if __name__ == '__main__':
-    main()
+    emoji_data = fetch_and_process_emojis()
+    with open('emojis/emojis.json', 'w', encoding='utf-8') as f:
+        json.dump(emoji_data, f, ensure_ascii=False, indent=2)

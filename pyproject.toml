@@ -1,20 +1,23 @@
-[tool.poetry]
+[project]
 name = "freemoji"
 version = "0.1.0"
 description = ""
-authors = ["Henil Gajjar <henilgajjar08@gmail.com>"]
+authors = [
+    {name = "Henil Gajjar",email = "henilgajjar08@gmail.com"}
+]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
-requests = "^2.32.3"
-bs4 = "^0.0.2"
-pandas = "^2.2.3"
-numpy = "^2.2.1"
-matplotlib = "^3.10.0"
-huggingface = "^0.0.1"
+python = ">=3.11,<3.13"
+huggingface-hub = "^0.27.1"
+mflux = "^0.5.1"
+streamlit = "^1.41.1"
+langchain-groq = "^0.2.3"
+ollama = "^0.4.6"
+pillow = "10.4.0"
+
 
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
