@@ -204,3 +204,7 @@ That’s it! Your custom sticker is now ready to use. You can also access it lat
 ## Fine-Tuning
 
 Check out `fine-tune/README.md` for more information about finetuning your own LoRA.
+
+## Credit
+
+A Big Shout out to [EvanZhouDev](https://github.com/EvanZhouDev) for his [Open-Genmoji](https://github.com/EvanZhouDev/open-genmoji) project in which he replicated Apple's Genmoji with Apple Emoji

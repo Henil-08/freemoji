@@ -12,7 +12,7 @@ def process_emojis():
     ]
     
     # Write filtered data
-    with open('emojis/emojisPruned.json', 'w') as f:
+    with open('emojis/emojisFiltered.json', 'w') as f:
         json.dump(filtered_emojis, f, indent=2)
 
 if __name__ == '__main__':
