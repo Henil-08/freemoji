@@ -1,4 +1,6 @@
-# freemoji
+# Freemoji
+
+## What is Freemoji?
 
 
 ## Downloading the Model
@@ -121,6 +123,8 @@ The Streamlit app provides the following features:
 	•	Once the emoji is generated, it will be displayed on the page.
 	•	The app automatically saves the emoji to the specified output path. You can customize this path in the text input field.
 
+> **Note**: Before it saves, it'll also do the Postprocessing step of resizing it to 5x the size with anti-aliasing (160x160 → 800x800). Learn more in [Add Sticker](#add-sticker)
+
 Play around with the prompt, and see what you can make. 
 
 ### Running Freemoji with `mflux`
@@ -170,4 +174,40 @@ It's a bit of a specific/personal setup, but I decided to push it in case anyone
 
 First, you'll need to install [Ollama](https://ollama.com/) and download your favorite model. (I have downlaoded llama3.1 8B for this project)
 
-Go to `./promptAssist.py`
+Now, given that Ollama is correctly set up, you should be able to directly run:
+
+```bash
+poetry run python promptAssist.py "[your prompt]"
+```
+
+Now, let's take a look at [Add Sticker](#add-sticker) to start using your creation as an actual sticker in Whatsapp and iOS.
+
+
+## Add Sticker
+
+Once you've generated an image using the Streamlit web app, you can easily transfer it to your phone and use it as a Sticker (iOS 17+) or Emoji (iOS 18+). Follow these simple steps:
+
+### For iOS Stickers or Emojis:
+1. Transfer the image to your phone and open it in the **Photos** app.
+2. Long press on the emoji in the picture (**hold your finger still**) for about 2 seconds.
+3. Release your finger and tap the **Add Sticker** button.
+
+- **iOS 17+**: You can apply the sticker by dragging it onto a message.
+- **iOS 18+**: The sticker will be available in your emoji menu, where you can tap to use it inline like a regular emoji.
+
+To delete a Sticker:
+- Long press on the sticker in your Sticker gallery (**hold your finger still**) for about 2 seconds.
+- Release and select **Delete**.
+
+
+### For WhatsApp Stickers:
+
+Using the generated image as a WhatsApp sticker is simple and quick. Here's how:
+
+1. **Save the Image**: Transfer the image to your phone and save it to your gallery.  
+2. **Create the Sticker**: 
+   - Open WhatsApp and navigate to the stickers section in a chat.  
+   - Tap the **Create** icon and select the image from your gallery.  
+3. **Save or Send**: Once the image is selected, you can customize it if needed, then save it or send it directly in the chat.  
+
+That’s it! Your custom sticker is now ready to use. You can also access it later from the stickers section.
