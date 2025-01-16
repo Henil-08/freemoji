@@ -45,7 +45,7 @@ def main():
                 new_img.save(output_path)
 
                 # Display the image
-                st.image(new_img, caption="Generated Image", use_column_width=True)
+                st.image(new_img, caption="Generated Image", use_container_width=True)
                 st.success(f"Image saved to {output_path}")
 
         except Exception as e:
