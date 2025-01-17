@@ -83,6 +83,8 @@ Training progress is saved as checkpoints, allowing you to resume from the last 
 
 During training, monitor validation images (e.g., smiley faces) and checkpoints in the `output/models` folder. The final LoRA (`.safetensors` file) will also be saved there. Rename it to `whatsapp-freemoji.safetensors` and place it in the `./fine-tune/models/` directory to use it with the Streamlit app in the root folder.
 
+> Note: It took me more **17 hours** to finetune this model on filtered whatsapp emojis on M4 Pro Macbook Pro with 20-Core GPU. Results may vary depending on your system.
+
 
 ## Alternative Methods
 

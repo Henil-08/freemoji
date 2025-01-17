@@ -1,9 +1,11 @@
 # Freemoji
 
+![](./assets/freemoji-logo.png)
+
 Freemoji brings Apple’s Genmoji concept to life, but with WhatsApp-style emojis and powered by open-source models! Best of all, Freemoji works seamlessly across all devices—not just Apple.
 
 Take a look at what Freemoji can do:
-| ![](./assets/squirrel-holding-an-iphone.png) |![](./assets/teddy-bear-in-a-suit.png) | ![](./assets/dinosaur-on-the-beach.png) | ![](./assets/wooden-chair.png) | ![](./assets/flower-in-vase.png) | ![](./assets/man-riding-motorbike.png) | ![](./assets/old-man-running.png) |
+| ![](./assets/squirrel-holding-an-iphone.png) |![](./assets/teddy-bear-in-a-suit.png) | ![](./assets/dinosaur-on-the-beach.png) | ![](./assets/yellow-duck-in-bathtub.png) | ![](./assets/eiffel-tower-in-desert.png) | ![](./assets/man-riding-motorbike.png) | ![](./assets/old-man-running.png) |
 | --------------------------------------------------------- | ---------------------------------------------------- | ------------------------------------------------------- | -------------------------------------------------------- | ----------------------------------------------------- | ---------------------------------------------------- |---------------------------------------------------- |
 
 Freemoji is a collection of LoRA files (available on [HuggingFace](https://huggingface.co/henil08/Whatsapp-Freemoji)) specially fine-tuned on thousands of WhatsApp emojis. These files enable an image generation model to create custom emojis effortlessly. You can use Freemoji anywhere a LoRA can be added to an image generation model.
@@ -112,7 +114,7 @@ The Streamlit app provides the following features:
 	•	Once the emoji is generated, it will be displayed on the page.
 	•	The app automatically saves the emoji to the specified output path. You can customize this path in the text input field.
 
-> **Note**: Generating an image takes approximately **80 seconds** on an M4 MacBook Pro with a 20-core GPU. The duration may vary based on your system’s specifications.
+> **Note**: Generating an image takes approximately **80 seconds** on an M4 Pro MacBook Pro with a 20-core GPU. The duration may vary based on your system’s specifications.
 
 Play around with the prompt, and see what you can make. Head on to [Add Sticker](#add-sticker) to start using your creation as an actual emoji on your iPhone, or learn a bit more below about how to chain Prompt Assist and `mflux` together.
 

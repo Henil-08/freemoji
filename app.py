@@ -7,7 +7,7 @@ import os
 
 # Streamlit app
 def main():
-    st.title("Image Generation App")
+    st.title("Freemoji: Genmoji for Whatsapp!")
     st.write("Generate images based on your prompts!")
 
     # Input fields
