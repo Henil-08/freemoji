@@ -1,8 +1,10 @@
-emoji
+**/emoji
 venv
 freemoji
 raw
 output
+documentation
+.venv
 fine-tune/emojis
 fine-tune/models
 **/SimpleTuner

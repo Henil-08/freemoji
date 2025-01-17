@@ -1,7 +1,7 @@
-import streamlit as st
+import streamlit as st # type: ignore
 from promptAssist import update_prompt
 from generate import generate_image
-from PIL import Image
+from PIL import Image # type: ignore
 from utils import get_unique_path
 import os
 
