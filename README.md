@@ -28,9 +28,17 @@ Explore the Tutorial for a step-by-step guide.
 
 ## Tutorial
 
-> This tutorial is tailored specifically for **macOS**. However, Freemoji is fully compatible with other operating systems. You’ll simply need an alternative tool to run Flux.1 Dev with a LoRA.
-
 This guide will lead you through all the steps necessary to run Freemoji, and also use the Prompt Assist metaprompt. First, let's get started by simply running the model.
+
+### How It Works
+
+Freemoji is designed to be simple. It automatically detects your system's hardware to provide the best performance:
+
+- **Apple Silicon (M1/M2/M3/M4):** Uses the `MFlux` and `MLX` libraries to leverage the powerful Metal GPU for fast image generation and prompt assistance.
+
+- **NVIDIA GPUs (CUDA):** Uses the `Diffusers` and `vLLM` libraries for high-performance generation on Linux or Windows.
+
+> Note: Image generation with the FLUX.1 model is too demanding and is not supported on Non-GPU devices.
 
 ### Prerequisites
 
@@ -46,22 +54,20 @@ This project **works best with Python 3.11**. If you have a Python Version Manag
 2. Next, we need to install the dependencies. It is recommended you first create a `venv`.
 
     ```bash
-    conda create -p venv python=3.11 -y
+    # Install uv package manager
+    pip install -U pip uv
 
-    # Install poetry package manager
-    pip install -U pip poetry
-    poetry config virtualenvs.create false
+    uv create venv
+    ./source/venv/activate
 
     # Install the dependencies
-    poetry install
+    uv sync
     ```
 
-**Setting Up HuggingFace and Ollama**:
+**Setting Up HuggingFace**:
 
 1. Run `huggingface-cli login` and use your token to login
 2. Go to [Flux.1 Dev Hugging Face Page](https://huggingface.co/black-forest-labs/FLUX.1-dev). Read and agree to the terms at the top to use the Gated model.
-3. Go to [Ollama](https://ollama.com/) and install Ollama in your system.
-4. Then, Run `ollama run llama3.1` to download llama3.1 8B model to your system.
 
 You're all done!
 
@@ -69,10 +75,10 @@ You're all done!
 
 Whatsapp-Freemoji LoRA is available on HuggingFace at [henil08/Whatsapp-Freemoji](https://huggingface.co/henil08/Whatsapp-Freemoji). However, there's a script included in this repository that makes downloading these LoRAs simple.
 
-All you have to do is run the `download.py` script available in the root directory:
+All you have to do is run the `downloadModel.py` script available in the root directory:
 
 ```bash
-poetry run python download.py
+uv run python downloadModel.py
 ```
 
 The LoRA has a brief description, and the model it works with. Give it a few seconds, and check that `fine-tune/models/whatsapp-freemoji.safetensors` is installed. It should be a 209.3MB file. You're all good to go!
@@ -83,7 +89,7 @@ The Freemoji application provides a user-friendly way to generate emojis using a
 
 Launch the Streamlit app by running the following command:
 ```bash
-poetry run streamlit run app.py
+uv run streamlit run app.py
 ```
 
 This will open a local web interface in your default browser where you can interact with the Freemoji app.
@@ -114,11 +120,11 @@ The Streamlit app provides the following features:
 	•	Once the emoji is generated, it will be displayed on the page.
 	•	The app automatically saves the emoji to the specified output path. You can customize this path in the text input field.
 
-> **Note**: Generating an image takes approximately **80 seconds** on an M4 Pro MacBook Pro with a 20-core GPU. The duration may vary based on your system’s specifications.
+> **Note**: Generating an image takes approximately **80 seconds** on an M4 Pro MacBook Pro with a 20-core GPU. The duration may vary based on your system’s specifications. On a system with an NVIDIA RTX 4090, it can be significantly faster.
 
 Play around with the prompt, and see what you can make. Head on to [Add Sticker](#add-sticker) to start using your creation as an actual emoji on your iPhone, or learn a bit more below about how to chain Prompt Assist and `mflux` together.
 
-### Running Freemoji with `mflux`
+### Running Freemoji with `mflux` on MacOS
 
 The image model we'll be using in this guide is Flux.1 Dev. Run the following command and you'll be able to create your emoji (If you're struggling with a good result, check out [Prompt Assist](#running-freemoji-with-prompt-assist))
 
@@ -168,7 +174,7 @@ First, you'll need to install [Ollama](https://ollama.com/) and download your fa
 Now, given that Ollama is correctly set up, you should be able to directly run:
 
 ```bash
-poetry run python promptAssist.py "[your prompt]"
+uv run python promptAssist.py "[your prompt]"
 ```
 
 Now, let's take a look at [Add Sticker](#add-sticker) to start using your creation as an actual sticker in Whatsapp and iOS.

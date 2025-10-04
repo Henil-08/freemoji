@@ -1,4 +1,6 @@
 import os
+import platform
+import torch
 
 def get_unique_path(base_path):
     directory = os.path.dirname(base_path)
@@ -20,3 +22,14 @@ def get_resized_filename(input_path):
     """Generate output filename by adding '-resized' before extension"""
     base, ext = os.path.splitext(input_path)
     return f"{base}-resized{ext}"
+
+def get_device_config():
+    """Detect system and return appropriate device configuration"""
+    system = platform.system()
+    
+    if system == "Darwin":  # macOS
+        return "mac", None
+    elif torch.cuda.is_available():
+        return "win/linux", "cuda"
+    else:
+        return "win/linux", "cpu"
